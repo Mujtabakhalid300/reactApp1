@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Blogpost from "./blogpost";
+import { Outlet } from "react-router-dom";
 
 class Blogs extends React.Component {
   state = {
@@ -35,11 +36,13 @@ class Blogs extends React.Component {
   render() {
     return (
       <React.Fragment>
-        {this.state.blogs.map((blog) => (
-          <Blogpost key={blog.id} state={blog}>
+        {/* {console.log(this.props)} */}
+        {this.props.blogs.map((blog) => (
+          <Blogpost key={blog.id} blog={blog}>
             hello world
           </Blogpost>
         ))}
+        <Outlet> </Outlet>
       </React.Fragment>
     );
   }

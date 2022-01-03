@@ -9,12 +9,13 @@ class Blogpost extends React.Component {
   render() {
     return (
       <div className="card" style={this.style}>
+        {/* {console.log(this.props)} */}
         <div className="card-body">
-          <h5 className="card-title">{this.props.state.id}</h5>
-          <p className="card-text">{this.props.state.value}</p>
-          <a href="#" className="btn btn-primary">
-            Go somewhere
-          </a>
+          <h5 className="card-title">{this.props.blog.id}</h5>
+          <p className="card-text">{this.props.blog.value}</p>
+          <Link to={`/${this.props.blog.id}`} className="btn btn-primary">
+            Full Article
+          </Link>
         </div>
       </div>
     );

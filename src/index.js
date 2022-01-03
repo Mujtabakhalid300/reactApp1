@@ -5,13 +5,14 @@ import Navbar from './components/navbar';
 import Blogs from "./components/blogs";
 import Blogpost from "./components/blogpost";
 import Contact from './components/contact';
+import Blog from './components/blog';
 import { BrowserRouter, Routes, Route , Outlet} from "react-router-dom";
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.css';
 
 
-const state = {
+ export const state = {
   blogs: [
     {
       id: 1,
@@ -48,8 +49,8 @@ ReactDOM.render(
     <BrowserRouter>
     <Navbar />
         <Routes>
-          <Route path="/" element={<Blogs/>} />
-          <Route path="/:id" element={<Blogpost />} />
+          <Route path="/" element={<Blogs blogs={state.blogs}/>} />
+          <Route path="/:id" element={<Blog/>} />
           <Route path="contact" element={<Contact />}/>
           
         </Routes>
