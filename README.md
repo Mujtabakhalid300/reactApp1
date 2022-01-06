@@ -6,6 +6,13 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, you can run:
 
+
+
+
+
+
+
+before starting create firebaseDB.js, add firebase imports, put firebase config, intialize firebase App, intialize and export default database
 ### `npm start`
 
 Runs the app in the development mode.\
