@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 class Blogpost extends React.Component {
   style = {
@@ -9,9 +10,15 @@ class Blogpost extends React.Component {
   };
   render() {
     return (
-      <div className="card" style={this.style}>
+      <motion.div
+        initial={{ x: "-100vw" }}
+        animate={{ x: 0 }}
+        transition={{ duration: 1, delay: this.props.number * 0.4 }}
+        className="card shadow-lg p-3 mb-5 bg-body rounded"
+        style={this.style}
+      >
         <div className="card-body">
-          <h5 className="card-title">{this.props.blog.id}</h5>
+          <h5 className="card-title">{this.props.blog.title}</h5>
           <p className="card-text">{this.props.blog.value}</p>
           <Link
             to={`/${this.props.blog.id}`}
@@ -21,7 +28,7 @@ class Blogpost extends React.Component {
             Full Article
           </Link>
         </div>
-      </div>
+      </motion.div>
     );
   }
 }

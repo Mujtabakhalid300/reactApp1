@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { motion } from "framer-motion";
 
 class Contact extends React.Component {
   style = {
@@ -7,7 +8,13 @@ class Contact extends React.Component {
   };
   render() {
     return (
-      <div className="card" style={this.style}>
+      <motion.div
+        initial={{ x: "-100vw", opacity: 0 }}
+        animate={{ x: 0, opacity: 1 }}
+        transition={{ duration: 1 }}
+        className="card"
+        style={this.style}
+      >
         <div className="card-body">
           <h5 className="card-title">We are available 24/7</h5>
           <p className="card-text">
@@ -21,7 +28,7 @@ class Contact extends React.Component {
             Open in Maps
           </a>
         </div>
-      </div>
+      </motion.div>
     );
   }
 }
