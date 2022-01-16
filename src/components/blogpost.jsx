@@ -14,12 +14,14 @@ class Blogpost extends React.Component {
         initial={{ x: "-100vw" }}
         animate={{ x: 0 }}
         transition={{ duration: 1, delay: this.props.number * 0.4 }}
-        className="card shadow-lg p-3 mb-5 bg-body rounded"
+        className="card shadow-lg p-3 mb-5 bg-body border rounded"
         style={this.style}
       >
         <div className="card-body">
           <h5 className="card-title">{this.props.blog.title}</h5>
-          <p className="card-text">{this.props.blog.value}</p>
+          <p className="card-text">
+            {this.props.blog.value.split(" ").slice(0, 25).join(" ")}
+          </p>
           <Link
             to={`/${this.props.blog.id}`}
             className="btn btn-primary"
